@@ -76,6 +76,7 @@
                 <option value="null" selected="selected">必填</option>
             </select>
         </label>
+        <label for="count"><span>自己所投票数</span><input type="text" name="count" id="count" placeholder=1></label>
           <button id="btn">计算</button>
        </div>
     
@@ -109,14 +110,16 @@
         var select = document.getElementById('select').value;
         console.log(select);
         console.log(n[select]);
+        var count = Number(document.getElementById('count').value)
+        console.log(count)
         if(select===champion){
-            var getMoney =  parseInt(money * 0.6  / n[select]);
+            var getMoney =  parseInt(count * money * 0.6  / n[select]);
             alert('获得' + getMoney + '通宝') 
         }else if(select===second){
-            var getMoney = parseInt(money * 0.3  / n[select]);
+            var getMoney = parseInt(count * money * 0.3  / n[select]);
             alert('获得' + getMoney + '通宝') 
         }else if(select===third){
-            var getMoney = parseInt(money * 0.1  / n[select]);
+            var getMoney = parseInt(count * money * 0.1  / n[select]);
             alert('获得' + getMoney + '通宝') 
         }else{
             alert('GWW这个大屁眼子!!!')
