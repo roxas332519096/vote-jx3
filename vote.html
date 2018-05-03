@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="title">
-        助威队友获得冠军评分60%奖池;助威队友获得亚军评分30%奖池;助威队友获得季军评分10%奖池;
+        助威队伍获得冠军评分60%奖池;助威队伍获得亚军评分30%奖池;助威队伍获得季军评分10%奖池;
     </div>
     <div id="currentNumber" class="currentNumber">
         
@@ -114,15 +114,15 @@
         console.log(count)
         if(select===champion){
             var getMoney =  parseInt(count * money * 0.6  / n[select]);
-            alert('获得' + getMoney + '通宝') 
+            alert('恭喜侠士获得' + getMoney + '通宝') 
         }else if(select===second){
             var getMoney = parseInt(count * money * 0.3  / n[select]);
-            alert('获得' + getMoney + '通宝') 
+            alert('恭喜侠士获得' + getMoney + '通宝') 
         }else if(select===third){
             var getMoney = parseInt(count * money * 0.1  / n[select]);
-            alert('获得' + getMoney + '通宝') 
+            alert('恭喜侠士获得' + getMoney + '通宝') 
         }else{
-            alert('GWW这个大屁眼子!!!')
+            alert('GWW这个大屁眼子!!!又骗我通宝!!!')
         }
      }
     
