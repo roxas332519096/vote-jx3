@@ -17,14 +17,14 @@
         
           <span>战队名</span>
           <span>票数</span>
-          <label for="team01"><span>醉雨话蝉</span><input type="text" name="01" id="team01" placeholder="0"></label>
-          <label for="team02"><span>清风望月</span><input type="text" name="02" id="team02" placeholder="0"></label>
-          <label for="team03"><span>墨洒琴心</span><input type="text" name="03" id="team03"placeholder="0"></label>
-          <label for="team04"><span>虽然弱但有猫</span><input type="text" name="04" id="team04"placeholder="0"></label>
-          <label for="team05"><span>水调歌头</span><input type="text" name="05" id="team05"placeholder="0"></label>
-          <label for="team06"><span>神器宝贝</span><input type="text" name="06" id="team06"placeholder="0"></label>
-          <label for="team07"><span>明月渔火逐流客</span><input type="text" name="07" id="team07"placeholder="0"></label>
-          <label for="team08"><span>意难平</span><input type="text" name="08" id="team08"placeholder="0"></label>
+          <label for="team01"><span>醉雨话蝉</span><input type="text" name="01" id="team01" placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team02"><span>清风望月</span><input type="text" name="02" id="team02" placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team03"><span>墨洒琴心</span><input type="text" name="03" id="team03"placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team04"><span>虽然弱但有猫</span><input type="text" name="04" id="team04"placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team05"><span>水调歌头</span><input type="text" name="05" id="team05"placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team06"><span>神器宝贝</span><input type="text" name="06" id="team06"placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team07"><span>明月渔火逐流客</span><input type="text" name="07" id="team07"placeholder="不是自己投的队伍,可以不填"></label>
+          <label for="team08"><span>意难平</span><input type="text" name="08" id="team08"placeholder="不是自己投的队伍,可以不填"></label>
           <hr>
           <label for="money"><span>奖池金额</span><input type="text" name="money" id="money" placeholder="单位是通宝"></label>
           <label for="champion"><span>冠军</span><select name="champion" id="champion">
@@ -36,7 +36,7 @@
               <option value="team06">神器宝贝</option>
               <option value="team07">明月渔火逐流客</option>
               <option value="team08">意难平</option>
-              <option value="null" selected="selected"></option>
+              <option value="null" selected="selected">选填</option>
           </select>
         </label>
           <label for="second"><span>亚军</span><select name="second" id="second">
@@ -48,7 +48,7 @@
                 <option value="team06">神器宝贝</option>
                 <option value="team07">明月渔火逐流客</option>
                 <option value="team08">意难平</option>
-                <option value="null" selected="selected"></option>
+                <option value="null" selected="selected">选填</option>
             </select>
         </label>
             <label for="third"><span>季军</span><select name="third" id="third">
@@ -60,7 +60,7 @@
                     <option value="team06">神器宝贝</option>
                     <option value="team07">明月渔火逐流客</option>
                     <option value="team08">意难平</option>
-                    <option value="null" selected="selected"></option>
+                    <option value="null" selected="selected">选填</option>
                 </select>
             </label>
         </label>
@@ -73,7 +73,7 @@
                 <option value="team06">神器宝贝</option>
                 <option value="team07">明月渔火逐流客</option>
                 <option value="team08">意难平</option>
-                <option value="null" selected="selected"></option>
+                <option value="null" selected="selected">必填</option>
             </select>
         </label>
           <button id="btn">计算</button>
@@ -96,7 +96,7 @@
         var n6 = document.getElementById('team06').value;
         var n7 = document.getElementById('team07').value;
         var n8 = document.getElementById('team08').value;
-        var n = [Number(n1),Number(n2),Number(n3),Number(n4),Number(n5), Number(n6),Number(n7),Number(n8)]
+        var n = {'team01':Number(n1),'team02':Number(n2),'team03':Number(n3),'team03':Number(n4),'team05':Number(n5), 'team06':Number(n6),'team07':Number(n7),'team08':Number(n8)}
         var money = Number(document.getElementById('money').value);
         console.log(money);
         console.log(n);
@@ -108,42 +108,15 @@
         console.log(third);
         var select = document.getElementById('select').value;
         console.log(select);
-        var i = 0;
-        switch(select){
-            case team01:
-            i = 0;
-            break;
-            case team02:
-            i = 1;
-            break;
-            case team03:
-            i = 2;
-            break;
-            case team04:
-            i = 3;
-            break;
-            case team05:
-            i = 4;
-            break;
-            case team06:
-            i = 5;
-            break;
-            case team07:
-            i = 6;
-            break;
-            case team08:
-            i = 7;
-            break;
-        }
-        console.log(n[i]);
+        console.log(n[select]);
         if(select===champion){
-            var getMoney = parseInt(money * 0.6 * 1/n[i])
+            var getMoney =  parseInt(money * 0.6  / n[select]);
             alert('获得' + getMoney + '通宝') 
         }else if(select===second){
-            var getMoney = parseInt(money * 0.3 * 1/n[i])
+            var getMoney = parseInt(money * 0.3  / n[select]);
             alert('获得' + getMoney + '通宝') 
         }else if(select===third){
-            var getMoney = parseInt(money * 0.1 * 1/n[i])
+            var getMoney = parseInt(money * 0.1  / n[select]);
             alert('获得' + getMoney + '通宝') 
         }else{
             alert('GWW这个大屁眼子!!!')
