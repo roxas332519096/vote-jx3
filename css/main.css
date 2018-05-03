@@ -1,0 +1,35 @@
+.title {
+    text-align: center;
+}
+.currentNumber>label {
+    display: block;
+    margin:3px 0;
+}
+
+.currentNumber>span {
+    display: inline-block;
+    width: 120px;
+    margin-left:5px;
+}
+
+.currentNumber>label>span {
+    display: inline-block;
+    width: 120px;
+    margin-left:5px;
+}
+
+.currentNumber>label>input,
+.currentNumber>label>select{
+    margin-left: 10px;
+}
+
+.currentNumber>button {
+    display: block;
+    width: 50px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.currentNumber>label>select>option:last-child{
+ display: none;
+}
