@@ -31,5 +31,5 @@
 }
 
 .currentNumber>label>select>option:last-child{
- display: none;
+ 
 }
