@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>大师赛通宝模拟器</title>
+    <title>剑网3第三届大师赛通宝竞猜模拟器</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -13,6 +13,11 @@
     <div class="title">
         <p>剑网3第三届大师赛通宝竞猜模拟器</p>
         <p> By 不吃虫子的鸡@蝶恋花</p>
+    </div>
+    <div class="banner"><img src="img/banner.png" alt="banner"></div>
+    <div class="changebtn">
+        <span id="btn1" class="btn1 active">单队伍</span>
+        <span id="btn2" class="btn2">多队伍</span>
     </div>
     <div id="currentNumber" class="currentNumber">
         <span>战队名</span>
@@ -78,9 +83,23 @@
         </label>
         <label for="count1"><span>自己所投票数1</span><input type="text" name="count1" id="count1" placeholder=0></label>
         <hr>
-        <p>注意:以下内容为投票多个队伍,假如只投单队伍则不填</p>
+        <p>注意:多选队伍请点击上方"多队伍"按钮</p>
         <hr>
-        <label for="select2"><span>投票队伍2</span><select name="select2" id="select2">
+        <div id="checkbox" class="checkbox">
+            <label for="select2"><span>投票队伍2</span><select name="select2" id="select2">
+                    <option value="team01">醉雨话蝉</option>
+                    <option value="team02">清风望月</option>
+                    <option value="team03">墨洒琴心</option>
+                    <option value="team04">虽然弱但有猫</option>
+                    <option value="team05">水调歌头</option>
+                    <option value="team06">神器宝贝</option>
+                    <option value="team07">明月渔火逐流客</option>
+                    <option value="team08">意难平</option>
+                    <option value="null" selected="selected">选填</option>
+                </select>
+            </label>
+            <label for="count2"><span>自己所投票数2</span><input type="text" name="count2" id="count2" placeholder=0></label>
+            <label for="select3"><span>投票队伍3</span><select name="select3" id="select3">
                 <option value="team01">醉雨话蝉</option>
                 <option value="team02">清风望月</option>
                 <option value="team03">墨洒琴心</option>
@@ -92,21 +111,9 @@
                 <option value="null" selected="selected">选填</option>
             </select>
         </label>
-        <label for="count2"><span>自己所投票数2</span><input type="text" name="count2" id="count2" placeholder=0></label>
-        <label for="select3"><span>投票队伍3</span><select name="select3" id="select3">
-            <option value="team01">醉雨话蝉</option>
-            <option value="team02">清风望月</option>
-            <option value="team03">墨洒琴心</option>
-            <option value="team04">虽然弱但有猫</option>
-            <option value="team05">水调歌头</option>
-            <option value="team06">神器宝贝</option>
-            <option value="team07">明月渔火逐流客</option>
-            <option value="team08">意难平</option>
-            <option value="null" selected="selected">选填</option>
-        </select>
-    </label>
-    <label for="count3"><span>自己所投票数3</span><input type="text" name="count3" id="count3" placeholder=0></label>
-            <button id="btn">计算</button>
+        <label for="count3"><span>自己所投票数3</span><input type="text" name="count3" id="count3" placeholder=0></label>
+        </div>
+        <button id="btn">计算</button>
     </div>
     
 <script>
@@ -115,6 +122,22 @@
     btn.onclick = function(){
         getDate();
     }
+
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var changebox = document.getElementById('checkbox');
+    console.log('checkbox');
+    btn1.onclick = function(){
+      btn1.classList.add('active');
+      btn2.classList.remove('active');
+      checkbox.classList.remove('active');
+    }
+    btn2.onclick = function(){
+      btn2.classList.add('active');
+      btn1.classList.remove('active');
+      checkbox.classList.add('active');
+    }
+
 
     //////////////////
     function getDate(){

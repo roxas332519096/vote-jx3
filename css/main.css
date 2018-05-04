@@ -1,31 +1,102 @@
+body{
+    background: rgb(41, 41, 49);
+    color: #fff;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-weight: bold;
+}
+
+hr {
+    color: rgb(17, 97, 238);
+}
+
 .title {
     text-align: center;
+    margin: 10px auto;
 }
-.currentNumber>label {
+
+.banner {
+    text-align: center;
+}
+
+.banner img{
+    background: rgb(17, 97, 238);
+    width: 100%;
+    max-width: 802px;
+}
+
+.changebtn {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.changebtn>span{
+    display: inline-block;
+    margin:0 5px;
+    padding-bottom: 3px;
+    border-bottom: 5px solid transparent;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.changebtn>span.active {
+    border-color:rgb(17, 97, 238);
+}
+
+.currentNumber{
+    font-weight: bold;
+    text-align: center;
+}
+
+.currentNumber label {
     display: block;
     margin:3px 0;
 }
 
-.currentNumber>span {
+.currentNumber span {
     display: inline-block;
     width: 120px;
     margin-left:5px;
 }
 
-.currentNumber>label>span {
+.currentNumber label span {
     display: inline-block;
     width: 120px;
     margin-left:5px;
 }
 
-.currentNumber>label>input,
-.currentNumber>label>select{
+.currentNumber label input,
+.currentNumber label select{
     margin-left: 10px;
+    border-radius: 3px;
+    border: none;
+    width: 10em;
+    text-align: center;
 }
 
-.currentNumber>button {
+.currentNumber button {
     display: block;
     width: 50px;
     margin: 0 auto;
     font-weight: bold;
+}
+
+.currentNumber .checkbox {
+    display: none;
+}
+
+.currentNumber .active{
+    display: block;
+}
+
+.currentNumber button{
+    display: block;
+    margin:10px auto;
+    width: 75px;
+    height: 75px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(17, 97, 238);
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
 }
